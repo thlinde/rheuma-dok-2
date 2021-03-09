@@ -11,7 +11,8 @@
       "../../types/env",
       "vite/client",
       "./types/shims-vue"
-    ]
+    ],
+    "allowSyntheticDefaultImports": true
   },
   "files": [
     "./index.ts"
