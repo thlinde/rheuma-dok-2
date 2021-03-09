@@ -33,6 +33,10 @@ if (!gotTheLock) {
 
   async function createWindow() {
     mainWindow = new BrowserWindow({
+      x: 0,
+      y: 0,
+      width: 1000,
+      height: 800,
       show: false,
       webPreferences: {
         preload: join(__dirname, '../preload/index.cjs.js'),
@@ -51,7 +55,7 @@ if (!gotTheLock) {
       : new URL('renderer/index.html', 'file://' + __dirname).toString();
 
     await mainWindow.loadURL(pageUrl);
-    mainWindow.maximize();
+    // mainWindow.maximize();
     mainWindow.show();
 
     if (env.MODE === 'development') {
