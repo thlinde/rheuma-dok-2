@@ -1,32 +1,40 @@
 <template>
   <w-app>
-    <img
-      alt="Vue logo"
-      src="./assets/logo.png"
-    >
-    <app-navigation />
-    <router-view />
+    <header>
+      <Header />
+    </header>
+    <w-flex grow>
+      <aside>
+        <SideNav />
+      </aside>
+      <main class="grow pa5">
+        <router-view />
+      </main>
+    </w-flex>
+    <footer>
+      <Footer />
+    </footer>
   </w-app>
 </template>
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import AppNavigation from '/@/components/AppNavigation.vue';
+import Header from '/@/components/Layout/Header.vue';
+import Footer from '/@/components/Layout/Footer.vue';
+import SideNav from '/@/components/Layout/SideNav.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    AppNavigation,
+    Header,
+    Footer,
+    SideNav,
   },
 });
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: "Roboto", Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
 </style>

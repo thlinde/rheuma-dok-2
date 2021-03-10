@@ -1,4 +1,4 @@
-import {app, BrowserWindow} from 'electron';
+import {app, BrowserWindow, ipcMain} from 'electron';
 import {join} from 'path';
 import {URL} from 'url';
 
@@ -33,10 +33,10 @@ if (!gotTheLock) {
 
   async function createWindow() {
     mainWindow = new BrowserWindow({
-      x: 0,
-      y: 0,
       width: 1000,
       height: 800,
+      y: 0,
+      x: 0,
       show: false,
       webPreferences: {
         preload: join(__dirname, '../preload/index.cjs.js'),
@@ -79,11 +79,9 @@ if (!gotTheLock) {
     }
   });
 
-
   app.whenReady()
     .then(createWindow)
     .catch((e) => console.error('Failed create window:', e));
-
 
   // Auto-updates
   if (env.PROD) {
@@ -92,4 +90,8 @@ if (!gotTheLock) {
       .then(({autoUpdater}) => autoUpdater.checkForUpdatesAndNotify())
       .catch((e) => console.error('Failed check updates:', e));
   }
+
+  ipcMain.on('request-quit-app', () => {
+    app.quit();
+  });
 }
