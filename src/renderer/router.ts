@@ -1,9 +1,16 @@
 import {createRouter, createWebHashHistory} from 'vue-router';
-import Home from '/@/components/Home.vue';
+import Patient from '/@/components/Patient/Patient.vue';
 
 const routes = [
-  {path: '/', name: 'Home', component: Home},
-  {path: '/about', name: 'About', component: () => import('/@/components/About.vue')}, // Lazy load route component
+  {path: '/', name: 'Patient', component: Patient},
+  {path: '/anamnesis', name: 'Anamnesis', component: () => import('/@/components/Anamnesis/Anamnesis.vue')},
+  {path: '/medical-examination', name: 'MedicalExamination', component: () => import('/@/components/MedicalExamination/MedicalExamination.vue')},
+  {path: '/scores', name: 'Scores', component: () => import('/@/components/Scores/Scores.vue')},
+  {path: '/laboratory', name: 'Laboratory', component: () => import('/@/components/Laboratory/Laboratory.vue')},
+  {path: '/imaging', name: 'Imaging', component: () => import('/@/components/Imaging/Imaging.vue')},
+  {path: '/epicrisis', name: 'Epicrisis', component: () => import('/@/components/Epicrisis/Epicrisis.vue')},
+  {path: '/settings', name: 'Settings', component: () => import('/@/components/Settings/Settings.vue')},
+  {path: '/about', name: 'About', component: () => import('/@/components/About.vue')},
 ];
 
 export default createRouter({

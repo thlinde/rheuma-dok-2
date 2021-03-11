@@ -36,47 +36,42 @@ export default defineComponent({
       {
         label: 'Ansichten',
         items: [
-            {
-              label: 'Patient',
-              icon: 'pi pi-user',
-              to: '/',
-            },
-            {
-              label: 'Anamnese',
-              icon: 'pi pi-book',
-              to: '/about',
-            },
+          {
+            label: 'Patient',
+            icon: 'pi pi-user',
+            to: '/',
+          },
+          {
+            label: 'Anamnese',
+            icon: 'pi pi-book',
+            to: '/anamnesis',
+          },
           {
             label: 'Untersuchung',
             icon: 'las la-stethoscope',
-            to: '/about',
+            to: '/medical-examination',
           },
           {
             label: 'Scores/Klassifikationen',
             icon: 'pi pi-star-o',
-            to: '/about',
+            to: '/scores',
           },
           {
             label: 'Labor',
             icon: 'las la-flask',
-            to: '/about',
+            to: '/laboratory',
           },
           {
-            label: 'Sonografie',
-            icon: 'las la-wifi',
-            to: '/about',
-          },
-          {
-            label: 'Röntgen/MRT',
-            icon: 'las la-radiation-alt',
-            to: '/about',
+            label: 'Bildgebung',
+            icon: 'las la-image',
+            to: '/imaging',
           },
           {
             label: 'Epikrise',
             icon: 'lar la-envelope',
-            to: '/about',
+            to: '/epicrisis',
           },
-          ],
+        ],
       },
     ];
 
@@ -87,7 +82,7 @@ export default defineComponent({
           {
             label: 'Konfiguration',
             icon: 'pi pi-cog',
-            to: '/',
+            to: '/settings',
           },
           {
             label: 'Beenden',
