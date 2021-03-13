@@ -7,6 +7,24 @@ const apiKey = 'electron';
 const api = {
   versions: process.versions,
   requestQuitApp: () => ipcRenderer.send('request-quit-app'),
+  requestTextdata: () => ipcRenderer.send('request-textdata'),
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // send: (channel: string, data: any) => {
+  //   // whitelist channels
+  //   const validChannels = ['request-textdata'];
+  //   if (validChannels.includes(channel)) {
+  //     ipcRenderer.send(channel, data);
+  //   }
+  // },
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  receive: (channel: string, func: any) => {
+    const validChannels = ['recieve-textdata'];
+    if (validChannels.includes(channel)) {
+      ipcRenderer.on(channel, (event, ...args) => func(...args));
+    }
+  },
 } as const;
 
 

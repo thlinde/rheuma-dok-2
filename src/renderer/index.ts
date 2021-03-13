@@ -18,6 +18,7 @@ import 'primevue/resources/primevue.min.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 import Menu from 'primevue/menu';
+import Button from 'primevue/button';
 
 const app = createApp(App);
 
@@ -28,4 +29,5 @@ new WaveUI(app, {
 app.use(router);
 app.use(PrimeVue);
 app.component('Menu', Menu);
+app.component('Button', Button);
 app.mount('#app');

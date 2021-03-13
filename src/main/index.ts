@@ -1,6 +1,7 @@
 import {app, BrowserWindow, ipcMain} from 'electron';
 import {join} from 'path';
 import {URL} from 'url';
+import {readTextData} from '/@/modules/textData';
 
 
 const gotTheLock = app.requestSingleInstanceLock();
@@ -93,5 +94,10 @@ if (!gotTheLock) {
 
   ipcMain.on('request-quit-app', () => {
     app.quit();
+  });
+
+  ipcMain.on('request-textdata', () => {
+    const textdata = readTextData();
+    mainWindow?.webContents.send('recieve-textdata', textdata);
   });
 }
