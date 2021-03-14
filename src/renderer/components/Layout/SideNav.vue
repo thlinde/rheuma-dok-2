@@ -26,9 +26,13 @@
 <script lang="ts">
 import {defineComponent} from 'vue';
 import { useElectron } from '/@/use/electron';
+import Menu from 'primevue/menu';
 
 export default defineComponent({
   name: 'SideNav',
+  components: {
+    Menu,
+  },
   setup() {
     const { requestQuitApp } = useElectron();
 

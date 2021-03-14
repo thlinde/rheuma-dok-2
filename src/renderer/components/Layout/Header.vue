@@ -7,35 +7,50 @@
     <Button
       class="p-button-rounded p-mr-5"
       icon="pi pi-user"
-      @click="getPatientdata"
+      @click="getGdtPatient"
     />
     <h3>
       {{ headerPatient }}
     </h3>
-    <div class="spacer" />
+    <div class="p-mx-5" />
     <h3>
       {{ headerId }}
     </h3>
+    <div class="spacer" />
+    <Calendar
+      id="icon"
+      v-model="sessionDate"
+      :show-icon="true"
+      class="p-filled calendar-el"
+    />
   </w-toolbar>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue';
-import { usePatientService } from '../../../services/PatientService';
+import { defineComponent, computed, ref } from 'vue';
+import { usePatientService } from '../../services/PatientService';
+import Calendar from 'primevue/calendar';
+import Button from 'primevue/button';
+import { DateTime } from 'luxon';
 
 export default defineComponent({
   name: 'Header',
+  components: {
+    Calendar, Button,
+  },
   setup() {
-    const { patientGdtModel, getPatientdata } = usePatientService();
+    const { patientModel, getGdtPatient } = usePatientService();
 
     const headerPatient = computed(() => {
-      return patientGdtModel.id ? `${patientGdtModel.firstName} ${patientGdtModel.lastName} - ${patientGdtModel.dateOfBirth}` : '';
+      return patientModel.id ? `${patientModel.firstName} ${patientModel.lastName} - ${patientModel.dateOfBirth}` : '';
     });
     const headerId = computed(() => {
-      return patientGdtModel.id ? `ID: ${patientGdtModel.id}` : '';
+      return patientModel.id ? `ID: ${patientModel.id}` : '';
     });
 
-    return { headerId, headerPatient, getPatientdata };
+    let sessionDate = ref(DateTime.now().toLocaleString());
+
+    return { headerId, headerPatient, getGdtPatient, sessionDate };
   },
 });
 </script>
@@ -43,5 +58,8 @@ export default defineComponent({
 <style scoped lang="scss">
 .el {
   min-height: 60px;
+}
+.calendar-el {
+  width: 9rem;
 }
 </style>

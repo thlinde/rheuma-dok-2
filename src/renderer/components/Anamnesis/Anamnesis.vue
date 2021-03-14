@@ -13,9 +13,13 @@
 import {defineComponent} from 'vue';
 import {useElectron} from '../../use/electron';
 const { requestTextdata, receive } = useElectron();
+import Button from 'primevue/button';
 
 export default defineComponent({
   name: 'Anamnese',
+  components: {
+    Button,
+  },
   setup() {
     const readTextdata = () => {
       requestTextdata();

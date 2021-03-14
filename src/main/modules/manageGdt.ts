@@ -14,7 +14,7 @@ import mac from 'macintosh';
 // @ts-ignore
 import win1252 from 'windows-1252';
 
-import {PatientGdtModel} from '../../models/patient';
+import {PatientGdtModel} from '../../renderer/models/patient';
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const readGdtFile = (directoryName: string, fileName: string) => {

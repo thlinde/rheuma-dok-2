@@ -1,7 +1,7 @@
 import {app, BrowserWindow, ipcMain} from 'electron';
 import {URL} from 'url';
 import {readTextData} from '/@/modules/textData';
-import {PatientGdtModel} from '../models/patient';
+import {PatientGdtModel} from '../renderer/models/patient';
 import {prepareGdt} from '/@/modules/prepareGdt';
 import {createPatientDataFromTxt, readGdtFile} from '/@/modules/manageGdt';
 import * as path from 'path';
@@ -104,7 +104,7 @@ if (!gotTheLock) {
     mainWindow?.webContents.send('recieve-textdata', textdata);
   });
 
-  ipcMain.on('request-patientdata', () => {
+  ipcMain.on('request-gdt-patient', () => {
     /*
     * todo remove for production
     * */
@@ -114,6 +114,6 @@ if (!gotTheLock) {
     *  */
     const text = readGdtFile(path.join(app.getPath('desktop'), 'gdt'), 'pvs.gdt');
     const patientdata:PatientGdtModel = createPatientDataFromTxt(text);
-    mainWindow?.webContents.send('recieve-patientdata', patientdata);
+    mainWindow?.webContents.send('recieve-gdt-patient', patientdata);
   });
 }

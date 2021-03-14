@@ -7,7 +7,9 @@
       <aside>
         <SideNav />
       </aside>
-      <main class="grow pa5">
+      <main
+        class="grow pa5 main"
+      >
         <router-view />
       </main>
     </w-flex>
@@ -36,5 +38,9 @@ export default defineComponent({
 <style lang="scss">
 #app {
   font-family: "Roboto", Avenir, Helvetica, Arial, sans-serif;
+}
+
+.main {
+  background-color: var(--surface-100);
 }
 </style>
