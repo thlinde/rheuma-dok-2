@@ -1,4 +1,4 @@
-export interface PatientModel {
+export interface PatientGdtModel {
   id: string;
   lastName: string,
   firstName: string,

@@ -4,52 +4,34 @@
   </h2>
 
   <div class="column">
-    <Button
-      label="Patienten-Daten"
-      class="p-button-sm p-button-outlined button"
-      @click="getPatientdata"
-    />
-    <div>
-      {{ patientdata.id }}
+    <div v-if="patientGdtModel.id">
+      {{ patientGdtModel.id }}
     </div>
-    <div>
-      {{ patientdata.firstName }}
+    <div v-if="patientGdtModel.id">
+      {{ patientGdtModel.firstName }}
     </div>
-    <div>
-      {{ patientdata.lastName }}
+    <div v-if="patientGdtModel.id">
+      {{ patientGdtModel.lastName }}
     </div>
-    <div>
-      {{ patientdata.dateOfBirth }}
+    <div v-if="patientGdtModel.id">
+      {{ patientGdtModel.dateOfBirth }}
     </div>
-    <div>
-      {{ patientdata.sex }}
+    <div v-if="patientGdtModel.id">
+      {{ patientGdtModel.sex }}
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive} from 'vue';
-import {PatientModel} from '../../../models/patient';
-import {useElectron} from '../../use/electron';
-const { requestPatientdata, receive } = useElectron();
+import { defineComponent } from 'vue';
+import { usePatientService } from '../../../services/PatientService';
 
 export default defineComponent({
   name: 'Patient',
   setup() {
-    const patientdata = reactive<PatientModel>({dateOfBirth: '', firstName: '', id: '', lastName: '', sex: ''});
+    const { patientGdtModel, getPatientdata } = usePatientService();
 
-    const getPatientdata = () => {
-      requestPatientdata();
-      receive('recieve-patientdata', (data: PatientModel) => {
-        patientdata.id = data.id;
-        patientdata.firstName = data.firstName;
-        patientdata.lastName = data.lastName;
-        patientdata.dateOfBirth = data.dateOfBirth;
-        patientdata.sex = data.sex;
-      });
-    };
-
-    return {patientdata, getPatientdata};
+    return {patientGdtModel, getPatientdata};
   },
 });
 </script>

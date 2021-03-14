@@ -5,26 +5,37 @@
     class="justify-center el"
   >
     <Button
-      class="p-button-rounded p-mr-2"
+      class="p-button-rounded p-mr-5"
       icon="pi pi-user"
+      @click="getPatientdata"
     />
-    <h2>
-      Title
-    </h2>
+    <h3>
+      {{ headerPatient }}
+    </h3>
     <div class="spacer" />
-    <span class="p-ml-2">Item 1</span>
-    <span class="p-ml-2">Item 2</span>
-    <span class="p-ml-2">Item 3</span>
+    <h3>
+      {{ headerId }}
+    </h3>
   </w-toolbar>
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
+import { defineComponent, computed } from 'vue';
+import { usePatientService } from '../../../services/PatientService';
 
 export default defineComponent({
   name: 'Header',
   setup() {
+    const { patientGdtModel, getPatientdata } = usePatientService();
 
+    const headerPatient = computed(() => {
+      return patientGdtModel.id ? `${patientGdtModel.firstName} ${patientGdtModel.lastName} - ${patientGdtModel.dateOfBirth}` : '';
+    });
+    const headerId = computed(() => {
+      return patientGdtModel.id ? `ID: ${patientGdtModel.id}` : '';
+    });
+
+    return { headerId, headerPatient, getPatientdata };
   },
 });
 </script>

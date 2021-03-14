@@ -14,7 +14,7 @@ import mac from 'macintosh';
 // @ts-ignore
 import win1252 from 'windows-1252';
 
-import {PatientModel} from '../../models/patient';
+import {PatientGdtModel} from '../../models/patient';
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const readGdtFile = (directoryName: string, fileName: string) => {
@@ -52,7 +52,7 @@ const deleteGdtFile = (gdtFilePath: path) => {
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const createPatientDataFromTxt = (txt: string) => {
-  const patient: PatientModel = {dateOfBirth: '', firstName: '', id: '', lastName: '', sex: ''};
+  const patient: PatientGdtModel = {dateOfBirth: '', firstName: '', id: '', lastName: '', sex: ''};
 
   if (txt.length) {
     const lines = txt.split('\n');
