@@ -40,6 +40,10 @@ export default defineComponent({
   font-family: "Roboto", Avenir, Helvetica, Arial, sans-serif;
 }
 
+html, body {
+  overflow-y: hidden;
+}
+
 .main {
   background-color: var(--surface-100);
 }

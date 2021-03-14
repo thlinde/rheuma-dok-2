@@ -9,71 +9,122 @@
         Patient
       </h4>
     </div>
-    <div
-      class="p-col box-stretched"
-    >
+    <ScrollPanel class="scroll-container">
       <div
-        v-if="patientModel.id"
+        class="p-col box-stretched p-px-3"
       >
         <div
-          class="p-d-flex p-ai-center p-jc-between"
+          v-if="patientModel.id"
         >
-          <div class="patient-name">
-            {{ patientName }}
+          <div
+            class="p-d-flex p-ai-center p-jc-between"
+          >
+            <div class="patient-name">
+              {{ patientName }}
+            </div>
+            <div class="row">
+              <Button
+                icon="pi pi-ellipsis-h"
+                class="p-button-rounded p-button-outlined p-button-sm p-mr-2"
+              />
+              <Button
+                icon="las la-database"
+                class="p-button-rounded p-button-outlined p-button-sm"
+              />
+            </div>
           </div>
-          <div class="row">
-            <Button
-              icon="pi pi-ellipsis-h"
-              class="p-button-rounded p-button-sm p-mr-2"
-            />
-            <Button
-              icon="las la-database"
-              class="p-button-rounded p-button-sm"
-            />
-          </div>
+          <w-divider class="my2" />
         </div>
-        <w-divider class="my2" />
-      </div>
-      <div
-        v-if="patientModel.id"
-      >
         <div
-          class="p-d-flex p-ai-center p-jc-between"
+          v-if="patientModel.id"
         >
-          <div>
+          <div
+            class="p-d-flex p-ai-center p-jc-between"
+          >
             <div>
-              Diagnose(n):
+              <div class="diagnosis">
+                Diagnose(n):
+              </div>
+              <div>
+                Rheumatoide Arthritis,<br>Osteoarthrose,<br>chronische Schmerzstörung
+              </div>
             </div>
             <div>
-              Rheumatoide Arthritis, Rheumatoide Arthritis,Rheumatoide Arthritis,Rheumatoide Arthritis,Rheumatoide Arthritis,Rheumatoide Arthritis,Rheumatoide Arthritis,Rheumatoide Arthritis,Rheumatoide Arthritis,Rheumatoide Arthritis,Rheumatoide Arthritis,
+              <Button
+                icon="pi pi-ellipsis-h"
+                class="p-button-rounded p-button-outlined p-button-sm"
+              />
             </div>
           </div>
-          <div>
-            <Button
-              icon="pi pi-ellipsis-h"
-              class="p-button-rounded p-button-sm"
-            />
-          </div>
+          <w-divider class="my2" />
         </div>
-        <w-divider class="my2" />
       </div>
+    </ScrollPanel>
+    <!--    <div-->
+    <!--      class="p-col box-stretched"-->
+    <!--    >-->
+    <!--      <div-->
+    <!--        v-if="patientModel.id"-->
+    <!--      >-->
+    <!--        <div-->
+    <!--          class="p-d-flex p-ai-center p-jc-between"-->
+    <!--        >-->
+    <!--          <div class="patient-name">-->
+    <!--            {{ patientName }}-->
+    <!--          </div>-->
+    <!--          <div class="row">-->
+    <!--            <Button-->
+    <!--              icon="pi pi-ellipsis-h"-->
+    <!--              class="p-button-rounded p-button-outlined p-button-sm p-mr-2"-->
+    <!--            />-->
+    <!--            <Button-->
+    <!--              icon="las la-database"-->
+    <!--              class="p-button-rounded p-button-outlined p-button-sm"-->
+    <!--            />-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--        <w-divider class="my2" />-->
+    <!--      </div>-->
+    <!--      <div-->
+    <!--        v-if="patientModel.id"-->
+    <!--      >-->
+    <!--        <div-->
+    <!--          class="p-d-flex p-ai-center p-jc-between"-->
+    <!--        >-->
+    <!--          <div>-->
+    <!--            <div class="diagnosis">-->
+    <!--              Diagnose(n):-->
+    <!--            </div>-->
+    <!--            <div>-->
+    <!--              Rheumatoide Arthritis, Osteoarthrose, chronische Schmerzstörung-->
+    <!--            </div>-->
+    <!--          </div>-->
+    <!--          <div>-->
+    <!--            <Button-->
+    <!--              icon="pi pi-ellipsis-h"-->
+    <!--              class="p-button-rounded p-button-outlined p-button-sm"-->
+    <!--            />-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--        <w-divider class="my2" />-->
+    <!--      </div>-->
 
-      <!--      <div v-if="patientModel.id">-->
-      <!--        {{ patientModel.id }}-->
-      <!--      </div>-->
-      <!--      <div v-if="patientModel.id">-->
-      <!--        {{ patientModel.firstName }}-->
-      <!--      </div>-->
-      <!--      <div v-if="patientModel.id">-->
-      <!--        {{ patientModel.lastName }}-->
-      <!--      </div>-->
-      <!--      <div v-if="patientModel.id">-->
-      <!--        {{ patientModel.dateOfBirth }}-->
-      <!--      </div>-->
-      <!--      <div v-if="patientModel.id">-->
-      <!--        {{ patientModel.sex }}-->
-      <!--      </div>-->
-    </div>
+    <!--      &lt;!&ndash;      <div v-if="patientModel.id">&ndash;&gt;-->
+    <!--      &lt;!&ndash;        {{ patientModel.id }}&ndash;&gt;-->
+    <!--      &lt;!&ndash;      </div>&ndash;&gt;-->
+    <!--      &lt;!&ndash;      <div v-if="patientModel.id">&ndash;&gt;-->
+    <!--      &lt;!&ndash;        {{ patientModel.firstName }}&ndash;&gt;-->
+    <!--      &lt;!&ndash;      </div>&ndash;&gt;-->
+    <!--      &lt;!&ndash;      <div v-if="patientModel.id">&ndash;&gt;-->
+    <!--      &lt;!&ndash;        {{ patientModel.lastName }}&ndash;&gt;-->
+    <!--      &lt;!&ndash;      </div>&ndash;&gt;-->
+    <!--      &lt;!&ndash;      <div v-if="patientModel.id">&ndash;&gt;-->
+    <!--      &lt;!&ndash;        {{ patientModel.dateOfBirth }}&ndash;&gt;-->
+    <!--      &lt;!&ndash;      </div>&ndash;&gt;-->
+    <!--      &lt;!&ndash;      <div v-if="patientModel.id">&ndash;&gt;-->
+    <!--      &lt;!&ndash;        {{ patientModel.sex }}&ndash;&gt;-->
+    <!--      &lt;!&ndash;      </div>&ndash;&gt;-->
+    <!--    </div>-->
   </div>
 </template>
 
@@ -118,12 +169,12 @@ export default defineComponent({
 }
 
 .box-stretched {
-  height: 100%;
+  //width: calc(100% - 10px);
+  width: 100%;
 }
 
 .vertical-container {
   margin: 0;
-  height: 100%;
   background-color: var(--surface-0);
   border-style: solid;
   border-width: 0.1rem;
@@ -132,5 +183,14 @@ export default defineComponent({
 
 .patient-name {
   font-size: 1.1em;
+}
+
+.diagnosis {
+  font-weight: bolder;
+}
+
+.scroll-container {
+  width: 100%;
+  height: calc(100vh - 150px);
 }
 </style>
