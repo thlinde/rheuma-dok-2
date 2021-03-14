@@ -1,7 +1,10 @@
 import {app, BrowserWindow, ipcMain} from 'electron';
-import {join} from 'path';
 import {URL} from 'url';
 import {readTextData} from '/@/modules/textData';
+import {PatientModel} from '../models/patient';
+import {prepareGdt} from '/@/modules/prepareGdt';
+import {createPatientDataFromTxt, readGdtFile} from '/@/modules/manageGdt';
+import * as path from 'path';
 
 
 const gotTheLock = app.requestSingleInstanceLock();
@@ -40,7 +43,7 @@ if (!gotTheLock) {
       x: 0,
       show: false,
       webPreferences: {
-        preload: join(__dirname, '../preload/index.cjs.js'),
+        preload: path.join(__dirname, '../preload/index.cjs.js'),
         contextIsolation: env.MODE !== 'test',   // Spectron tests can't work with contextIsolation: true
         enableRemoteModule: env.MODE === 'test', // Spectron tests can't work with enableRemoteModule: false
       },
@@ -99,5 +102,18 @@ if (!gotTheLock) {
   ipcMain.on('request-textdata', () => {
     const textdata = readTextData();
     mainWindow?.webContents.send('recieve-textdata', textdata);
+  });
+
+  ipcMain.on('request-patientdata', () => {
+    /*
+    * todo remove for production
+    * */
+    prepareGdt();
+    /*
+    * todo change parameters for production
+    *  */
+    const text = readGdtFile(path.join(app.getPath('desktop'), 'gdt'), 'pvs.gdt');
+    const patientdata:PatientModel = createPatientDataFromTxt(text);
+    mainWindow?.webContents.send('recieve-patientdata', patientdata);
   });
 }

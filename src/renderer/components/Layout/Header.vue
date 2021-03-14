@@ -4,20 +4,17 @@
     color="grey-light5"
     class="justify-center el"
   >
-    <w-button
-      class="mr3"
-      bg-color="primary-light3"
-      color="grey-dark5"
+    <Button
+      class="p-button-rounded p-mr-2"
       icon="pi pi-user"
-      lg
     />
-    <div class="title2">
+    <h2>
       Title
-    </div>
+    </h2>
     <div class="spacer" />
-    <span class="ml2">Item 1</span>
-    <span class="ml2">Item 2</span>
-    <span class="ml2">Item 3</span>
+    <span class="p-ml-2">Item 1</span>
+    <span class="p-ml-2">Item 2</span>
+    <span class="p-ml-2">Item 3</span>
   </w-toolbar>
 </template>
 

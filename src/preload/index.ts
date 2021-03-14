@@ -8,6 +8,7 @@ const api = {
   versions: process.versions,
   requestQuitApp: () => ipcRenderer.send('request-quit-app'),
   requestTextdata: () => ipcRenderer.send('request-textdata'),
+  requestPatientdata: () => ipcRenderer.send('request-patientdata'),
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   // send: (channel: string, data: any) => {
@@ -20,7 +21,7 @@ const api = {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   receive: (channel: string, func: any) => {
-    const validChannels = ['recieve-textdata'];
+    const validChannels = ['recieve-textdata', 'recieve-patientdata'];
     if (validChannels.includes(channel)) {
       ipcRenderer.on(channel, (event, ...args) => func(...args));
     }

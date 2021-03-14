@@ -1,0 +1,25 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import path from 'path';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import fs from 'fs';
+import { app } from 'electron';
+
+let counter = 0;
+
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export const prepareGdt = () => {
+  const pathGdt1 = path.join(app.getPath('desktop'), 'gdt', 'src', 'pvs_f.gdt');
+  const pathGdt2 = path.join(app.getPath('desktop'), 'gdt', 'src', 'pvs_m.gdt');
+  const pathGdt = path.join(app.getPath('desktop'), 'gdt', 'pvs.gdt');
+  if (counter % 2) {
+    // copy 1
+    fs.copyFileSync(pathGdt1, pathGdt);
+    counter++;
+  } else {
+    // copy 2
+    fs.copyFileSync(pathGdt2, pathGdt);
+    counter++;
+  }
+};
