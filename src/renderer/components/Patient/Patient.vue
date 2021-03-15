@@ -175,6 +175,7 @@ export default defineComponent({
 
 .vertical-container {
   margin: 0;
+  padding: 0;
   background-color: var(--surface-0);
   border-style: solid;
   border-width: 0.1rem;

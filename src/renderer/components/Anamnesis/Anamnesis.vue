@@ -1,50 +1,52 @@
 <template>
   <div class="column main-container">
+    <div class="p-col box-header">
+      <h4>Anamnese</h4>
+    </div>
     <div class="p-d-flex">
-      <!--      <div class="p-col button-container">-->
-      <!--        Tho-->
-      <!--      </div>-->
-      <ScrollPanel class="button-container">
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-        Thomas<br>
-      </ScrollPanel>
+      <div class="p-col button-container">
+        <ScrollPanel class="scroll-container">
+          Thomas<br>
+          Thomas<br>
+          Thomas<br>
+          Thomas<br>
+          Thomas<br>
+          Thomas<br>
+          Thomas<br>
+          Thomas<br>
+          Thomas<br>
+          Thomas<br>
+          Thomas<br>
+          Thomas<br>
+          Thomas<br>
+          Thomas<br>
+          Thomas<br>
+          Thomas<br>
+          Thomas<br>
+          Thomas<br>
+          Thomas<br>
+          Thomas<br>
+          Thomas<br>
+          Thomas<br>
+          <!--          Thomas<br>-->
+          <!--          Thomas<br>-->
+          <!--          Thomas<br>-->
+          <!--          Thomas<br>-->
+          <!--          Thomas<br>-->
+          <!--          Thomas<br>-->
+          <!--          Thomas<br>-->
+          <!--          Thomas<br>-->
+          <!--          Thomas<br>-->
+          <!--          Thomas<br>-->
+          <!--          Thomas<br>-->
+          <!--          Thomas<br>-->
+          <!--          Thomas<br>-->
+          <!--          Thomas<br>-->
+          <!--          Thomas<br>-->
+          <!--          Thomas<br>-->
+          <!--          Thomas<br>-->
+        </ScrollPanel>
+      </div>
     </div>
     <div class="p-d-flex">
       <div class="p-col textarea-container">
@@ -77,19 +79,33 @@ export default defineComponent({
 }
 .main-container {
   height: 100%;
-  //height: calc(100% - 10px);
-  //height: calc(100% + 15px);
-  background-color: chartreuse;
+  margin: 0;
+  background-color: var(--surface-0);
+  border-style: solid;
+  border-width: 0.1rem;
+  border-color: var(--surface-500);
+}
+.box-header {
+  background-color: var(--surface-d);
+  border-bottom-color: var(--surface-500);
+  border-bottom-style: solid;
+  border-bottom-width: 0.1rem;
 }
 .button-container {
-  //height: 100%;
-  height: 200px;
-  //height: calc(100vh - 440px);
+  height: calc(100vh - 480px);
   width: 100%;
-  background-color: #848484;
+  //background-color: #848484;
+
+  .scroll-container {
+    height: calc(100vh - 500px);
+    width: 100%;
+  }
 }
 .textarea-container {
   height: 300px;
-  background-color: #42b983;
+  //background-color: #42b983;
+  border-top-color: var(--surface-500);
+  border-top-style: solid;
+  border-top-width: 0.1rem;
 }
 </style>
