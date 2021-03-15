@@ -8,7 +8,7 @@
         <SideNav />
       </aside>
       <main
-        class="grow pa5 main"
+        class="grow pa3 main"
       >
         <router-view />
       </main>
@@ -41,7 +41,7 @@ export default defineComponent({
 }
 
 html, body {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .main {

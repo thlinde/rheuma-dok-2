@@ -1,24 +1,14 @@
 <template>
-  <div
-    class="p-flex-column p-ai-stretch vertical-container"
-  >
-    <div
-      class="p-col box-header"
-    >
-      <h4>
-        Patient
+  <div class="p-card main-container">
+    <div class="header-container p-d-flex p-ai-center">
+      <h4 class="p-ml-2">
+        Patientendaten
       </h4>
     </div>
     <ScrollPanel class="scroll-container">
-      <div
-        class="p-col box-stretched p-px-3"
-      >
-        <div
-          v-if="patientModel.id"
-        >
-          <div
-            class="p-d-flex p-ai-center p-jc-between"
-          >
+      <div class="p-col box-stretched p-pr-3">
+        <div v-if="patientModel.id">
+          <div class="p-d-flex p-ai-center p-jc-between">
             <div class="patient-name">
               {{ patientName }}
             </div>
@@ -35,12 +25,8 @@
           </div>
           <w-divider class="my2" />
         </div>
-        <div
-          v-if="patientModel.id"
-        >
-          <div
-            class="p-d-flex p-ai-center p-jc-between"
-          >
+        <div v-if="patientModel.id">
+          <div class="p-d-flex p-ai-center p-jc-between">
             <div>
               <div class="diagnosis">
                 Diagnose(n):
@@ -60,71 +46,6 @@
         </div>
       </div>
     </ScrollPanel>
-    <!--    <div-->
-    <!--      class="p-col box-stretched"-->
-    <!--    >-->
-    <!--      <div-->
-    <!--        v-if="patientModel.id"-->
-    <!--      >-->
-    <!--        <div-->
-    <!--          class="p-d-flex p-ai-center p-jc-between"-->
-    <!--        >-->
-    <!--          <div class="patient-name">-->
-    <!--            {{ patientName }}-->
-    <!--          </div>-->
-    <!--          <div class="row">-->
-    <!--            <Button-->
-    <!--              icon="pi pi-ellipsis-h"-->
-    <!--              class="p-button-rounded p-button-outlined p-button-sm p-mr-2"-->
-    <!--            />-->
-    <!--            <Button-->
-    <!--              icon="las la-database"-->
-    <!--              class="p-button-rounded p-button-outlined p-button-sm"-->
-    <!--            />-->
-    <!--          </div>-->
-    <!--        </div>-->
-    <!--        <w-divider class="my2" />-->
-    <!--      </div>-->
-    <!--      <div-->
-    <!--        v-if="patientModel.id"-->
-    <!--      >-->
-    <!--        <div-->
-    <!--          class="p-d-flex p-ai-center p-jc-between"-->
-    <!--        >-->
-    <!--          <div>-->
-    <!--            <div class="diagnosis">-->
-    <!--              Diagnose(n):-->
-    <!--            </div>-->
-    <!--            <div>-->
-    <!--              Rheumatoide Arthritis, Osteoarthrose, chronische Schmerzstörung-->
-    <!--            </div>-->
-    <!--          </div>-->
-    <!--          <div>-->
-    <!--            <Button-->
-    <!--              icon="pi pi-ellipsis-h"-->
-    <!--              class="p-button-rounded p-button-outlined p-button-sm"-->
-    <!--            />-->
-    <!--          </div>-->
-    <!--        </div>-->
-    <!--        <w-divider class="my2" />-->
-    <!--      </div>-->
-
-    <!--      &lt;!&ndash;      <div v-if="patientModel.id">&ndash;&gt;-->
-    <!--      &lt;!&ndash;        {{ patientModel.id }}&ndash;&gt;-->
-    <!--      &lt;!&ndash;      </div>&ndash;&gt;-->
-    <!--      &lt;!&ndash;      <div v-if="patientModel.id">&ndash;&gt;-->
-    <!--      &lt;!&ndash;        {{ patientModel.firstName }}&ndash;&gt;-->
-    <!--      &lt;!&ndash;      </div>&ndash;&gt;-->
-    <!--      &lt;!&ndash;      <div v-if="patientModel.id">&ndash;&gt;-->
-    <!--      &lt;!&ndash;        {{ patientModel.lastName }}&ndash;&gt;-->
-    <!--      &lt;!&ndash;      </div>&ndash;&gt;-->
-    <!--      &lt;!&ndash;      <div v-if="patientModel.id">&ndash;&gt;-->
-    <!--      &lt;!&ndash;        {{ patientModel.dateOfBirth }}&ndash;&gt;-->
-    <!--      &lt;!&ndash;      </div>&ndash;&gt;-->
-    <!--      &lt;!&ndash;      <div v-if="patientModel.id">&ndash;&gt;-->
-    <!--      &lt;!&ndash;        {{ patientModel.sex }}&ndash;&gt;-->
-    <!--      &lt;!&ndash;      </div>&ndash;&gt;-->
-    <!--    </div>-->
   </div>
 </template>
 
@@ -161,37 +82,35 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-.box-header {
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+.main-container {
+  height: 100%;
+  width: 100%;
+  border-style: solid;
+  border-width: 0.1rem;
+  border-color: var(--surface-500);
+}
+.header-container {
+  height: 40px;
+  width: 100%;
   background-color: var(--surface-d);
   border-bottom-color: var(--surface-500);
   border-bottom-style: solid;
   border-bottom-width: 0.1rem;
 }
-
-.box-stretched {
-  //width: calc(100% - 10px);
+.scroll-container {
   width: 100%;
+  height: calc(100% - 340px);
+  padding: 0.5rem;
 }
-
-.vertical-container {
-  margin: 0;
-  padding: 0;
-  background-color: var(--surface-0);
-  border-style: solid;
-  border-width: 0.1rem;
-  border-color: var(--surface-500);
-}
-
 .patient-name {
   font-size: 1.1em;
 }
-
 .diagnosis {
   font-weight: bolder;
-}
-
-.scroll-container {
-  width: 100%;
-  height: calc(100vh - 180px);
 }
 </style>

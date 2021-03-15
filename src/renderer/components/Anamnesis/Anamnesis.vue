@@ -1,57 +1,52 @@
 <template>
-  <div class="column main-container">
-    <div class="p-col box-header">
-      <h4>Anamnese</h4>
+  <div class="p-card main-container">
+    <div class="header-container p-d-flex p-ai-center">
+      <h4 class="p-ml-2">
+        Anamnese
+      </h4>
     </div>
-    <div class="p-d-flex">
-      <div class="p-col button-container">
-        <ScrollPanel class="scroll-container">
-          Thomas<br>
-          Thomas<br>
-          Thomas<br>
-          Thomas<br>
-          Thomas<br>
-          Thomas<br>
-          Thomas<br>
-          Thomas<br>
-          Thomas<br>
-          Thomas<br>
-          Thomas<br>
-          Thomas<br>
-          Thomas<br>
-          Thomas<br>
-          Thomas<br>
-          Thomas<br>
-          Thomas<br>
-          Thomas<br>
-          Thomas<br>
-          Thomas<br>
-          Thomas<br>
-          Thomas<br>
-          <!--          Thomas<br>-->
-          <!--          Thomas<br>-->
-          <!--          Thomas<br>-->
-          <!--          Thomas<br>-->
-          <!--          Thomas<br>-->
-          <!--          Thomas<br>-->
-          <!--          Thomas<br>-->
-          <!--          Thomas<br>-->
-          <!--          Thomas<br>-->
-          <!--          Thomas<br>-->
-          <!--          Thomas<br>-->
-          <!--          Thomas<br>-->
-          <!--          Thomas<br>-->
-          <!--          Thomas<br>-->
-          <!--          Thomas<br>-->
-          <!--          Thomas<br>-->
-          <!--          Thomas<br>-->
-        </ScrollPanel>
-      </div>
-    </div>
-    <div class="p-d-flex">
-      <div class="p-col textarea-container">
-        Linde
-      </div>
+    <ScrollPanel class="scroll-container">
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+      Thomas<br>
+    </ScrollPanel>
+    <div class="textarea-container">
+      Linde
     </div>
   </div>
 </template>
@@ -74,36 +69,34 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-.button {
-  margin-top: 0.5em;
+#root {
+  height: 100%;
+  width: 100%;
 }
 .main-container {
   height: 100%;
-  margin: 0;
-  background-color: var(--surface-0);
+  width: 100%;
   border-style: solid;
   border-width: 0.1rem;
   border-color: var(--surface-500);
 }
-.box-header {
+.header-container {
+  height: 40px;
+  width: 100%;
   background-color: var(--surface-d);
   border-bottom-color: var(--surface-500);
   border-bottom-style: solid;
   border-bottom-width: 0.1rem;
 }
-.button-container {
-  height: calc(100vh - 480px);
+.scroll-container {
   width: 100%;
-  //background-color: #848484;
-
-  .scroll-container {
-    height: calc(100vh - 500px);
-    width: 100%;
-  }
+  height: calc(100% - 340px);
+  padding: 0.5rem;
 }
 .textarea-container {
   height: 300px;
-  //background-color: #42b983;
+  width: 100%;
+  padding: 0.5rem;
   border-top-color: var(--surface-500);
   border-top-style: solid;
   border-top-width: 0.1rem;
