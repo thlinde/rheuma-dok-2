@@ -191,6 +191,6 @@ export default defineComponent({
 
 .scroll-container {
   width: 100%;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 180px);
 }
 </style>

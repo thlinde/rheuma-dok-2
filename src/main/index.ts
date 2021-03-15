@@ -38,7 +38,9 @@ if (!gotTheLock) {
   async function createWindow() {
     mainWindow = new BrowserWindow({
       width: 1000,
+      minWidth: 800,
       height: 800,
+      minHeight: 800,
       y: 0,
       x: 0,
       show: false,
