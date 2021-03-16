@@ -8,9 +8,14 @@
     <ScrollPanel class="scroll-container custombar">
       <div class="p-col box-stretched p-pr-3">
         <div v-if="patientModel.id">
-          <div class="p-d-flex p-ai-center p-jc-between">
-            <div class="patient-name">
-              {{ patientName }}
+          <div class="p-d-flex p-ai-start p-jc-between mt4">
+            <div class="column">
+              <div class="patient-name p-mb-2">
+                ID: {{ patientModel.id }}
+              </div>
+              <div class="patient-name">
+                {{ patientName }}
+              </div>
             </div>
             <div class="row">
               <Button
@@ -23,7 +28,7 @@
               />
             </div>
           </div>
-          <w-divider class="my2" />
+          <w-divider class="my4" />
         </div>
         <div v-if="patientModel.id">
           <div class="p-d-flex p-ai-start p-jc-between">
@@ -42,7 +47,7 @@
               />
             </div>
           </div>
-          <w-divider class="my2" />
+          <w-divider class="my4" />
         </div>
       </div>
     </ScrollPanel>
@@ -110,8 +115,8 @@ export default defineComponent({
     }
 
     .p-scrollpanel-bar {
-      background-color: var(--surface-d);
-      border-radius: 0;
+      background-color: var(--surface-400);
+      border-radius: 4em 4em;
       opacity: 1;
       transition: background-color .2s;
     }

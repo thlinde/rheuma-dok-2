@@ -115,8 +115,8 @@ export default defineComponent({
     }
 
     .p-scrollpanel-bar {
-      background-color: var(--surface-d);
-      border-radius: 0;
+      background-color: var(--surface-400);
+      border-radius: 4em 4em;
       opacity: 1;
       transition: background-color .2s;
     }

@@ -67,7 +67,19 @@
       Thomas<br>
     </ScrollPanel>
     <div class="textarea-container">
-      Linde
+      <div class="w-flex row p-input-filled">
+        <Textarea class="textarea grow p-filled" />
+        <div class="w-flex column justify-end ml3">
+          <Button
+            icon="pi pi-trash"
+            class="p-button-rounded p-button-sm mb1"
+          />
+          <Button
+            icon="pi pi-download"
+            class="p-button-rounded p-button-sm"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -75,11 +87,13 @@
 <script lang="ts">
 import {defineComponent} from 'vue';
 import ScrollPanel from 'primevue/scrollpanel';
+import Textarea from 'primevue/textarea';
+import Button from 'primevue/button';
 
 export default defineComponent({
   name: 'Anamnese',
   components: {
-    ScrollPanel,
+    ScrollPanel, Textarea, Button,
   },
   setup() {
 
@@ -114,13 +128,15 @@ export default defineComponent({
   height: calc(100vh - 450px);
 }
 .textarea-container {
-  minheight: 300px;
-  maxheight: 300px;
   width: 100%;
   padding: 0.5rem;
   border-top-color: var(--surface-500);
   border-top-style: solid;
   border-top-width: 0.1rem;
+}
+.textarea {
+  width: 100%;
+  height: 265px
 }
 ::v-deep(.p-scrollpanel) {
   &.custombar {
@@ -129,8 +145,8 @@ export default defineComponent({
     }
 
     .p-scrollpanel-bar {
-      background-color: var(--surface-d);
-      border-radius: 0;
+      background-color: var(--surface-400);
+      border-radius: 4em 4em;
       opacity: 1;
       transition: background-color .2s;
     }

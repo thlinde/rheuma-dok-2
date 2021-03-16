@@ -113,8 +113,6 @@ export default defineComponent({
   height: calc(100vh - 450px);
 }
 .textarea-container {
-  minheight: 300px;
-  maxheight: 300px;
   width: 100%;
   padding: 0.5rem;
   border-top-color: var(--surface-500);
@@ -128,8 +126,8 @@ export default defineComponent({
     }
 
     .p-scrollpanel-bar {
-      background-color: var(--surface-d);
-      border-radius: 0;
+      background-color: var(--surface-400);
+      border-radius: 4em 4em;
       opacity: 1;
       transition: background-color .2s;
     }
