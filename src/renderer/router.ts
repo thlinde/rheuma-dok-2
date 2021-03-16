@@ -10,7 +10,6 @@ const routes = [
   {path: '/imaging', name: 'Imaging', component: () => import('/@/components/Imaging/Imaging.vue')},
   {path: '/epicrisis', name: 'Epicrisis', component: () => import('/@/components/Epicrisis/Epicrisis.vue')},
   {path: '/settings', name: 'Settings', component: () => import('/@/components/Settings/Settings.vue')},
-  {path: '/about', name: 'About', component: () => import('/@/components/About.vue')},
 ];
 
 export default createRouter({

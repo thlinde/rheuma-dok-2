@@ -5,7 +5,7 @@
         Patientendaten
       </h4>
     </div>
-    <ScrollPanel class="scroll-container">
+    <ScrollPanel class="scroll-container custombar">
       <div class="p-col box-stretched p-pr-3">
         <div v-if="patientModel.id">
           <div class="p-d-flex p-ai-center p-jc-between">
@@ -26,13 +26,13 @@
           <w-divider class="my2" />
         </div>
         <div v-if="patientModel.id">
-          <div class="p-d-flex p-ai-center p-jc-between">
+          <div class="p-d-flex p-ai-start p-jc-between">
             <div>
               <div class="diagnosis">
                 Diagnose(n):
               </div>
               <div>
-                Rheumatoide Arthritis,<br>Osteoarthrose,<br>chronische Schmerzstörung
+                Rheumatoide Arthritis,<br>Osteoarthrose,<br>chronische Schmerzstörung<br>
               </div>
             </div>
             <div>
@@ -74,8 +74,6 @@ export default defineComponent({
       return '';
     });
 
-
-
     return { patientModel, patientName };
   },
 });
@@ -85,7 +83,6 @@ export default defineComponent({
 #root {
   height: 100%;
   width: 100%;
-  margin: 0;
 }
 .main-container {
   height: 100%;
@@ -104,8 +101,21 @@ export default defineComponent({
 }
 .scroll-container {
   width: 100%;
-  height: calc(100% - 340px);
-  padding: 0.5rem;
+  height: calc(100vh - 167px);
+}
+::v-deep(.p-scrollpanel) {
+  &.custombar {
+    .p-scrollpanel-wrapper {
+      border-right: 9px solid var(--surface-b);
+    }
+
+    .p-scrollpanel-bar {
+      background-color: var(--surface-d);
+      border-radius: 0;
+      opacity: 1;
+      transition: background-color .2s;
+    }
+  }
 }
 .patient-name {
   font-size: 1.1em;

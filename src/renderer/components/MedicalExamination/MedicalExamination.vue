@@ -5,7 +5,7 @@
         Untersuchung
       </h4>
     </div>
-    <ScrollPanel class="scroll-container">
+    <ScrollPanel class="scroll-container custombar">
       Thomas<br>
       Thomas<br>
       Thomas<br>
@@ -88,15 +88,27 @@ export default defineComponent({
 }
 .scroll-container {
   width: 100%;
-  height: calc(100% - 340px);
-  padding: 0.5rem;
+  height: calc(100vh - 450px);
 }
 .textarea-container {
-  height: 300px;
   width: 100%;
   padding: 0.5rem;
   border-top-color: var(--surface-500);
   border-top-style: solid;
   border-top-width: 0.1rem;
+}
+::v-deep(.p-scrollpanel) {
+  &.custombar {
+    .p-scrollpanel-wrapper {
+      border-right: 9px solid var(--surface-b);
+    }
+
+    .p-scrollpanel-bar {
+      background-color: var(--surface-d);
+      border-radius: 0;
+      opacity: 1;
+      transition: background-color .2s;
+    }
+  }
 }
 </style>
