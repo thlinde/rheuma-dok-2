@@ -48,7 +48,7 @@ export default defineComponent({
       return patientModel.id ? `ID: ${patientModel.id}` : '';
     });
 
-    let sessionDate = ref(DateTime.now().toLocaleString());
+    let sessionDate = ref(DateTime.now().toLocaleString({day: '2-digit', month: '2-digit', year: 'numeric' }));
 
     return { headerId, headerPatient, getGdtPatient, sessionDate };
   },
