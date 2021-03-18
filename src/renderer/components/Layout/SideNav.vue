@@ -71,6 +71,11 @@ export default defineComponent({
             to: '/imaging',
           },
           {
+            label: 'Therapie',
+            icon: 'las la-pills',
+            to: '/therapy',
+          },
+          {
             label: 'Epikrise',
             icon: 'lar la-envelope',
             to: '/epicrisis',

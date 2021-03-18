@@ -8,6 +8,7 @@ const routes = [
   {path: '/scores', name: 'Scores', component: () => import('/@/components/Scores/Scores.vue')},
   {path: '/laboratory', name: 'Laboratory', component: () => import('/@/components/Laboratory/Laboratory.vue')},
   {path: '/imaging', name: 'Imaging', component: () => import('/@/components/Imaging/Imaging.vue')},
+  {path: '/therapy', name: 'Therapy', component: () => import('/@/components/Therapy/Therapy.vue')},
   {path: '/epicrisis', name: 'Epicrisis', component: () => import('/@/components/Epicrisis/Epicrisis.vue')},
   {path: '/settings', name: 'Settings', component: () => import('/@/components/Settings/Settings.vue')},
 ];
