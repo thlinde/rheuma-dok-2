@@ -123,7 +123,7 @@ export default defineComponent({
 }
 .scroll-container {
   width: 100%;
-  height: calc(100vh - 450px);
+  height: calc(100vh - 500px);
 }
 .textarea-container {
   width: 100%;
@@ -134,7 +134,7 @@ export default defineComponent({
 }
 .textarea {
   width: 100%;
-  height: 265px
+  height: 315px
 }
 ::v-deep(.p-scrollpanel) {
   &.custombar {
