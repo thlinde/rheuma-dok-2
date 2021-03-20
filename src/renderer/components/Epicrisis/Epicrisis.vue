@@ -67,19 +67,33 @@
       Thomas<br>
     </ScrollPanel>
     <div class="textarea-container">
-      Linde
+      <div class="w-flex row p-input-filled">
+        <Textarea class="textarea grow p-card" />
+        <div class="w-flex column justify-end ml3">
+          <Button
+            icon="pi pi-trash"
+            class="p-button-rounded p-button-sm p-button-raised mb1"
+          />
+          <Button
+            icon="pi pi-download"
+            class="p-button-rounded p-button-sm p-button-raised"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
+import { defineComponent } from 'vue';
 import ScrollPanel from 'primevue/scrollpanel';
+import Textarea from 'primevue/textarea';
+import Button from 'primevue/button';
 
 export default defineComponent({
   name: 'Epicrisis',
   components: {
-    ScrollPanel,
+    ScrollPanel, Textarea, Button,
   },
   setup() {
     return {};

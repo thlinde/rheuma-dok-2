@@ -68,15 +68,15 @@
     </ScrollPanel>
     <div class="textarea-container">
       <div class="w-flex row p-input-filled">
-        <Textarea class="textarea grow p-filled" />
+        <Textarea class="textarea grow p-card" />
         <div class="w-flex column justify-end ml3">
           <Button
             icon="pi pi-trash"
-            class="p-button-rounded p-button-sm mb1"
+            class="p-button-rounded p-button-sm p-button-raised mb1"
           />
           <Button
             icon="pi pi-download"
-            class="p-button-rounded p-button-sm"
+            class="p-button-rounded p-button-sm p-button-raised"
           />
         </div>
       </div>
@@ -85,7 +85,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
+import { defineComponent } from 'vue';
 import ScrollPanel from 'primevue/scrollpanel';
 import Textarea from 'primevue/textarea';
 import Button from 'primevue/button';
