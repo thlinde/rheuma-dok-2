@@ -3,27 +3,6 @@ import {NavigationItemModel, TextdataModel} from '../../models/textdata';
 import {useElectron} from '../../use/electron';
 const { requestTextdata, receive } = useElectron();
 
-// const popupItemModel: PopupItemModel = {
-//   popupText: '',
-//   popupAssociatedForm: '',
-// };
-//
-// const subItemModel: SubItemModel = {
-//   subText: '',
-//   subItemAssociatedForm: '',
-//   popupItems: [],
-// };
-//
-// const mainItemModel: MainItemsModel = {
-//   mainText: '',
-//   subItems: [],
-// };
-//
-// const navigationItemModel: NavigationItemModel = {
-//   navigationText: '',
-//   mainItems: [],
-// };
-
 const textdataModel: TextdataModel = {
   name: 'Textdaten',
   navigationItems: [],
@@ -54,10 +33,8 @@ const getAnamnesisTextdata = () => {
 };
 
 const clearAnamnesisTextdata = () => {
-  // textdataModel = {
-  //   name: 'Textdaten',
-  //   navigationItems: [],
-  // };
+  anamnesisTextdataModel.navigationText = 'Anamnese';
+  anamnesisTextdataModel.mainItems = [];
 };
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types

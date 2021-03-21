@@ -7,28 +7,6 @@
     </div>
     <ScrollPanel class="scroll-container custombar">
       <div class="p-m-2">
-        <!--        <Card-->
-        <!--          v-for="mainItem in anamnesisTextdataModel.mainItems"-->
-        <!--          :key="mainItem.mainText"-->
-        <!--          class="p-mb-3"-->
-        <!--        >-->
-        <!--          <template #subtitle>-->
-        <!--            {{ mainItem.mainText }}-->
-        <!--          </template>-->
-        <!--          <template #content>-->
-        <!--            <div-->
-        <!--              class="p-d-flex wrap"-->
-        <!--            >-->
-        <!--              <Button-->
-        <!--                v-for="subitem in mainItem.subItems"-->
-        <!--                :key="subitem.subText"-->
-        <!--                class="p-button-outlined p-button-sm p-mr-2"-->
-        <!--              >-->
-        <!--                {{ subitem.subText }}-->
-        <!--              </Button>-->
-        <!--            </div>-->
-        <!--          </template>-->
-        <!--        </Card>-->
         <w-card
           v-for="mainItem in anamnesisTextdataModel.mainItems"
           :key="mainItem.mainText"
@@ -53,17 +31,6 @@
           </w-flex>
         </w-card>
       </div>
-
-      <!--      <div>{{ anamnesisTextdataModel.navigationText }}</div>-->
-      <!--      <div v-for="mainItem in anamnesisTextdataModel.mainItems">-->
-      <!--        {{ mainItem.mainText }}-->
-      <!--        <div v-for="subitem in mainItem.subItems">-->
-      <!--          {{ subitem.subText }} / {{ subitem.subItemAssociatedForm }}-->
-      <!--          <div v-for="popupitem in subitem.popupItems">-->
-      <!--            {{ popupitem.popupText }} / {{ popupitem.popupAssociatedForm }}-->
-      <!--          </div>-->
-      <!--        </div>-->
-      <!--      </div>-->
     </ScrollPanel>
     <div class="textarea-container">
       <div class="w-flex row p-input-filled">
@@ -85,7 +52,7 @@
 
 <script lang="ts">
 import {computed, defineComponent} from 'vue';
-import { useTextdataService } from '../../services/Textdataservice';
+import { useTextdataService } from '../../services/AnamnesisTextdataService';
 import ScrollPanel from 'primevue/scrollpanel';
 import Textarea from 'primevue/textarea';
 import Button from 'primevue/button';
