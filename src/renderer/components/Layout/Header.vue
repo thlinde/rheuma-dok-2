@@ -5,7 +5,7 @@
     class="justify-center el"
   >
     <Button
-      class="p-button-rounded p-mr-5"
+      class="p-button-rounded p-mr-5 button-custom"
       icon="pi pi-user"
       @click="getGdtPatient"
     />
@@ -61,5 +61,9 @@ export default defineComponent({
 }
 .calendar-el {
   width: 9rem;
+}
+.button-custom {
+  background-color: #234781;
+  border-color: #234781;
 }
 </style>

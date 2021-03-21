@@ -38,11 +38,11 @@
         <div class="w-flex column justify-end ml3">
           <Button
             icon="pi pi-trash"
-            class="p-button-rounded p-button-sm p-button-raised mb1"
+            class="p-button-rounded p-button-sm p-button-raised mb1 button-custom"
           />
           <Button
             icon="pi pi-download"
-            class="p-button-rounded p-button-sm p-button-raised"
+            class="p-button-rounded p-button-sm p-button-raised button-custom"
           />
         </div>
       </div>
@@ -124,5 +124,9 @@ export default defineComponent({
 }
 .custom-card {
   background-color: #F5F5F5;
+}
+.button-custom {
+  background-color: #234781;
+  border-color: #234781;
 }
 </style>
