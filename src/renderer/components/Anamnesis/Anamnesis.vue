@@ -6,65 +6,64 @@
       </h4>
     </div>
     <ScrollPanel class="scroll-container custombar">
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
-      Thomas<br>
+      <div class="p-m-2">
+        <!--        <Card-->
+        <!--          v-for="mainItem in anamnesisTextdataModel.mainItems"-->
+        <!--          :key="mainItem.mainText"-->
+        <!--          class="p-mb-3"-->
+        <!--        >-->
+        <!--          <template #subtitle>-->
+        <!--            {{ mainItem.mainText }}-->
+        <!--          </template>-->
+        <!--          <template #content>-->
+        <!--            <div-->
+        <!--              class="p-d-flex wrap"-->
+        <!--            >-->
+        <!--              <Button-->
+        <!--                v-for="subitem in mainItem.subItems"-->
+        <!--                :key="subitem.subText"-->
+        <!--                class="p-button-outlined p-button-sm p-mr-2"-->
+        <!--              >-->
+        <!--                {{ subitem.subText }}-->
+        <!--              </Button>-->
+        <!--            </div>-->
+        <!--          </template>-->
+        <!--        </Card>-->
+        <w-card
+          v-for="mainItem in anamnesisTextdataModel.mainItems"
+          :key="mainItem.mainText"
+          shadow
+          class="mb2 custom-card"
+        >
+          <p class="title5">
+            {{ mainItem.mainText }}
+          </p>
+          <w-divider class="my2" />
+          <w-flex wrap>
+            <w-button
+              v-for="subitem in mainItem.subItems"
+              :key="subitem.subText"
+              class="mr1 mb1"
+              outline
+              md
+              tile
+            >
+              {{ subitem.subText }}
+            </w-button>
+          </w-flex>
+        </w-card>
+      </div>
+
+      <!--      <div>{{ anamnesisTextdataModel.navigationText }}</div>-->
+      <!--      <div v-for="mainItem in anamnesisTextdataModel.mainItems">-->
+      <!--        {{ mainItem.mainText }}-->
+      <!--        <div v-for="subitem in mainItem.subItems">-->
+      <!--          {{ subitem.subText }} / {{ subitem.subItemAssociatedForm }}-->
+      <!--          <div v-for="popupitem in subitem.popupItems">-->
+      <!--            {{ popupitem.popupText }} / {{ popupitem.popupAssociatedForm }}-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--      </div>-->
     </ScrollPanel>
     <div class="textarea-container">
       <div class="w-flex row p-input-filled">
@@ -85,7 +84,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import {computed, defineComponent} from 'vue';
+import { useTextdataService } from '../../services/Textdataservice';
 import ScrollPanel from 'primevue/scrollpanel';
 import Textarea from 'primevue/textarea';
 import Button from 'primevue/button';
@@ -96,8 +96,11 @@ export default defineComponent({
     ScrollPanel, Textarea, Button,
   },
   setup() {
+    const { anamnesisTextdataModel, getAnamnesisTextdata } = useTextdataService();
+    getAnamnesisTextdata();
 
     return {
+      anamnesisTextdataModel,
     };
   },
 });
@@ -151,5 +154,8 @@ export default defineComponent({
       transition: background-color .2s;
     }
   }
+}
+.custom-card {
+  background-color: #F5F5F5;
 }
 </style>
