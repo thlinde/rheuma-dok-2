@@ -20,11 +20,11 @@
             <div class="row">
               <Button
                 icon="pi pi-ellipsis-h"
-                class="p-button-rounded p-button-outlined p-button-sm p-mr-2"
+                class="p-button-rounded p-button-sm p-mr-2 button-custom"
               />
               <Button
                 icon="las la-database"
-                class="p-button-rounded p-button-outlined p-button-sm"
+                class="p-button-rounded p-button-sm button-custom"
               />
             </div>
           </div>
@@ -43,7 +43,7 @@
             <div>
               <Button
                 icon="pi pi-ellipsis-h"
-                class="p-button-rounded p-button-outlined p-button-sm"
+                class="p-button-rounded p-button-sm button-custom"
               />
             </div>
           </div>
@@ -127,5 +127,9 @@ export default defineComponent({
 }
 .diagnosis {
   font-weight: bolder;
+}
+.button-custom {
+  background-color: #234781;
+  border-color: #234781;
 }
 </style>
